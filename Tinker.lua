@@ -340,7 +340,7 @@ function Tinker.DoCombo()
     end	
 
     -- ethereal
-    if not NPC.HasModifier(enemy, "modifier_item_ethereal_blade_ethereal") then
+    if not NPC.HasModifier(enemy, "modifier_item_ethereal_blade_ethereal") or NPC.HasModifier(enemy, "modifier_item_ethereal_blade_ethereal") and Modifier.GetDieTime(NPC.GetModifier(enemy, "modifier_item_ethereal_blade_ethereal")) - GameRules.GetGameTime() <= AbilityChannelTime[Ability.GetLevel(SpellRefresh)] + Ability.GetCastPoint(SpellRefresh) + 0.1 then
         if Tinker.UseItem(ItemEthereal, Tinker.menuItemsHandle["ItemEthereal"]) then 
             -- missle speed: 1275
             if NPC.IsEntityInRange(MyHero, enemy, Ability.GetCastRange(ItemEthereal)) then
