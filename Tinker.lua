@@ -239,10 +239,6 @@ function Tinker.CalculateDamage(hero)
 		dmg_multiplier = dmg_multiplier + Modifier.GetConstantByIndex(NPC.GetModifier(hero, "modifier_shadow_demon_soul_catcher"), 0) / 100
 	end
 
-	if NPC.HasModifier(hero, "modifier_slardar_sprint") then
-		dmg_multiplier = dmg_multiplier + Modifier.GetConstantByIndex(NPC.GetModifier(hero, "modifier_slardar_sprint"), 0) / 100
-	end
-
     -- Orchid logic is strange so it needs to be fucking here
     --if Tinker.CanUseItem(ItemOrchid, Tinker.menuItemsHandle["ItemOrchid"], hero) then
     --    dmg_multiplier = dmg_multiplier + 0.3
