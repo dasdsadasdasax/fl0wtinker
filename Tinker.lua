@@ -339,7 +339,7 @@ function Tinker.DoCombo()
     end
 
     -- maybe hex?)
-    if not NPC.HasState(enemy, Enum.ModifierState.MODIFIER_STATE_HEXED) and not NPC.HasState(enemy, Enum.ModifierState.MODIFIER_STATE_STUNNED) then
+    if not NPC.HasModifier(enemy, "modifier_sheepstick_debuff") or NPC.HasModifier(enemy, "modifier_sheepstick_debuff") and Modifier.GetDieTime(NPC.GetModifier(enemy, "modifier_sheepstick_debuff")) - GameRules.GetGameTime() <= AbilityChannelTime[Ability.GetLevel(SpellRefresh)] + Ability.GetCastPoint(SpellRefresh) + 0.1 then
         if Tinker.UseItem(ItemHex, Tinker.menuItemsHandle["ItemHex"]) then return end
     end	
 
