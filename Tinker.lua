@@ -304,7 +304,6 @@ end
 -- DoCombo() - doing combo on CurrentVictim
 function Tinker.DoCombo()
     --Log.Write("Tinker.DoCombo() -> Combo is executing")
-
     local enemy = CurrentVictim
     -- in first, maybe autoattack?)
     if not NPC.HasState(enemy, Enum.ModifierState.MODIFIER_STATE_ATTACK_IMMUNE) then
